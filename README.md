@@ -1,10 +1,21 @@
 # seckill
 
-## introduction
+## Introduction
 This is a commodity seckill system, which can ensure that multiple people can purchase a commodity safely and effectively at the same time
 
 ## Technical points
 TODO
+
+## Display the results
+### Login
+![Login Page](./imgs/login.png)
+### Goods Detail
+![GoodsDetail](./imgs/goodsDetail.png)
+### Seckill
+![SeckillPage](./imgs/seckillGoodsDetail.png)
+### Seckill Success
+![SeckillSuccess](./imgs/success.png)
+
 
 ## how to use
 1. git clone https://github.com/wanzhiwen/seckill.git

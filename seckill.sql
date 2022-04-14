@@ -40,7 +40,7 @@ CREATE TABLE `t_goods` (
 
 LOCK TABLES `t_goods` WRITE;
 /*!40000 ALTER TABLE `t_goods` DISABLE KEYS */;
-INSERT INTO `t_goods` VALUES (1,'IPHONE13','IPHONE13 128GB','/img/iphone13.png','IPHONE13 128GB',5999.00,100),(2,'IPHONE13 PRO','IPHONE13 PRO 128GB','/img/iphone13pro.png','IPHONE13 PRO 128GB',7999.00,100);
+INSERT INTO `t_goods` VALUES (1,'LI-NING SHOE','LI-NING SHOE','/img/LI-NING.png','LI NING',600.00,100),(2,'ANTA SHOE','ANTA SHOE','/img/ANTA.png','ANTA',350.00,100);
 /*!40000 ALTER TABLE `t_goods` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `t_order` (
   `create_date` datetime DEFAULT NULL COMMENT '订单创建时间',
   `pay_date` datetime DEFAULT NULL COMMENT '支付时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `t_order` (
 
 LOCK TABLES `t_order` WRITE;
 /*!40000 ALTER TABLE `t_order` DISABLE KEYS */;
-INSERT INTO `t_order` VALUES (1,13000000000,1,0,'IPHONE13',1,599.00,1,0,'2022-04-13 21:05:14',NULL);
+INSERT INTO `t_order` VALUES (2,13000000000,1,0,'LI-NING SHOE',1,200.00,1,0,'2022-04-14 21:08:19',NULL);
 /*!40000 ALTER TABLE `t_order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,7 +101,7 @@ CREATE TABLE `t_seckill_goods` (
 
 LOCK TABLES `t_seckill_goods` WRITE;
 /*!40000 ALTER TABLE `t_seckill_goods` DISABLE KEYS */;
-INSERT INTO `t_seckill_goods` VALUES (1,1,599.00,9,'2022-04-13 02:57:00','2022-05-13 02:57:14'),(2,2,799.00,10,'2022-04-13 02:57:51','2022-05-13 02:57:54');
+INSERT INTO `t_seckill_goods` VALUES (1,1,200.00,8,'2022-04-13 02:57:00','2022-05-13 02:57:14'),(2,2,150.00,10,'2022-04-13 02:57:51','2022-05-13 02:57:54');
 /*!40000 ALTER TABLE `t_seckill_goods` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `t_seckill_order` (
   `goods_id` bigint(20) DEFAULT NULL COMMENT '商品ID',
   PRIMARY KEY (`id`),
   UNIQUE KEY `seckill_uid_gid` (`user_id`,`goods_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +128,7 @@ CREATE TABLE `t_seckill_order` (
 
 LOCK TABLES `t_seckill_order` WRITE;
 /*!40000 ALTER TABLE `t_seckill_order` DISABLE KEYS */;
-INSERT INTO `t_seckill_order` VALUES (1,13000000000,1,1);
+INSERT INTO `t_seckill_order` VALUES (2,13000000000,2,1);
 /*!40000 ALTER TABLE `t_seckill_order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-14 19:23:37
+-- Dump completed on 2022-04-14 21:14:40
