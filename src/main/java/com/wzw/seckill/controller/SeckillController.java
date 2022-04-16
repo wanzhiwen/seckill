@@ -1,11 +1,8 @@
 package com.wzw.seckill.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.wf.captcha.ArithmeticCaptcha;
 import com.wzw.seckill.config.AccessLimit;
 import com.wzw.seckill.exception.GlobalException;
-import com.wzw.seckill.pojo.Order;
 import com.wzw.seckill.pojo.SeckillMessage;
 import com.wzw.seckill.pojo.SeckillOrder;
 import com.wzw.seckill.pojo.User;
@@ -24,7 +21,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
