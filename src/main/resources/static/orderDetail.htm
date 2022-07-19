@@ -39,7 +39,10 @@
 
             </td>
             <td>
-                <button class="btn btn-primary btn-block" type="submit" id="payButton">立即支付</button>
+                <button class="btn btn-primary btn-block" type="submit" id="payButton" onclick="getPayCode()">立即支付
+                    <input type="hidden" name="orderId" id="orderId">
+                    <input type="hidden" name="payPrice" id="payPrice">
+                </button>
             </td>
         </tr>
         <tr>
@@ -56,7 +59,31 @@
     $(function () {
         getOrderDetail()
     });
-    
+
+    function getPayCode() {
+        var orderId = g_getQueryString("orderId")
+        //var price = $("#payPrice").val();
+        var price = 0.01
+        $.ajax({
+            url:'/pay/createPayCode',
+            type:'GET',
+            data:{
+                orderId:orderId,
+                amount:price
+            },
+            success:function (data) {
+                if(data.code==200){
+                    window.location.href = '/create.htm?orderId=' + orderId + '&codeUrl=' + data.obj;
+                }else{
+                    layer.msg("获取付款码失败")
+                }
+            },
+            error:function () {
+                layer.msg("客户端请求错误")
+            }
+        })
+    }
+
     function getOrderDetail() {
         var orderId = g_getQueryString("orderId")
         $.ajax({
@@ -84,15 +111,19 @@
         $("#goodsName").text(goods.goodsName);
         $("#goodsImg").attr("src", goods.goodsImg);
         $("#goodsPrice").text(order.goodsPrice);
+        $("#orderId").val(order.id);
+        $("#payPrice").val(order.goodsPrice);
         $("#createDate").text(new Date(order.createDate).format("yyyy-MM-dd HH:mm:ss"));
         var status = order.status;
         var statusText = "";
         switch(status){
             case 0:
                 statusText = "未支付";
+                $("#payButton").show()
                 break;
             case 1:
-                statusText = "待发货";
+                statusText = "已付款";
+                $("#payButton").hide()
                 break;
             case 2:
                 statusText = "已发货";

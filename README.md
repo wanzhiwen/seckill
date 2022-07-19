@@ -16,6 +16,8 @@
 10. 使用Jmeter做接口压力测试，使用静态页面优化以及Redis缓存和RabbitMQ处理消息使得QPS提升2.6倍
 11. 使用接口隐藏和验证码防止机器代抢
 12. 通过设置请求计数器进行接口限流，限定规定时间的请求次数
+13. 创建支付模块，接入微信支付SDK，使用微信支付作为商品的支付方式
+14. 使用Dubbo，将支付服务进行注册，秒杀系统通过RPC调用获取商品支付服务
 
 ## 结果展示
 ### 登录页面
@@ -27,15 +29,26 @@
 ### 秒杀页面
 这是秒杀页面，展示秒杀商品详情，通过输入验证码后点击秒杀按钮进行秒杀。
 ![SeckillPage](./imgs/seckillGoodsDetail.png)
+### 秒杀结果页面
+![SeckillSuccess1](./imgs/success1.png)
 ### 秒杀详情页
-这是秒杀详情页，秒杀成功即可展示。
-![SeckillSuccess](./imgs/success.png)
+这是秒杀详情页，秒杀成功即可展示。然后进行支付
+![SeckillSuccess2](./imgs/success2.png)
+### 微信支付的二维码
+这是微信支付的二维码
+![qrCode](./imgs/qrcode.png)
+### 微信支付结果
+这是微信支付的结果
+![qrCode](./imgs/payResult.jpg)
+### 支付结果
+支付成功后订单状态改变
+![payfinish](./imgs/payfinish.png)
 
 
 ## 如何使用
 1. 项目下载：https://github.com/wanzhiwen/seckill.git
 2. 在IDEA中导入项目
-3. 在自己的机器上安装mysql/rabbitmq/redis并启动
+3. 在自己的机器上安装mysql/rabbitmq/redis/zookeeper并启动
 3. 在seckill/src/main/resources/application.yml中根据自己的环境更改配置
 4. 向你的本机上导入数据库seckill/seckill.sql
 6. 启动并在浏览器上输入http://ip_address:8080/login/toLogin开始秒杀！

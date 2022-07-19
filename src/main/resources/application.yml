@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
 #  #静态资源处理
 #  resources:
@@ -93,6 +96,15 @@ spring:
         # 重试的间隔乘数 比如2.0 第一次等10s 第二次等20s 第三次等30s
         multiplier: 1
 
+dubbo:
+  application:
+    name: payClient
+  registry:
+    address: 127.0.0.1:2181
+    protocol: zookeeper
+  protocol:
+    name: dubbo
+    port: 20880
 
 mybatis-plus:
   # Mapper.xml映射文件
@@ -104,4 +116,5 @@ mybatis-plus:
 logging:
   level:
     com.wzw.seckill.mapper: debug
+
 
