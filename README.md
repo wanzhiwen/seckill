@@ -21,27 +21,36 @@
 
 ## 结果展示
 ### 登录页面
-这是用户登录页面，输入账号密码即可登录。
+- 这是用户登录页面，输入账号密码即可登录。
+
 ![Login Page](./imgs/login.png)
 ### 商品详情页
-这是商品详情列表，列举所有商品的详细信息。
+- 这是商品详情列表，列举所有商品的详细信息。
+
 ![GoodsDetail](./imgs/goodsDetail.png)
 ### 秒杀页面
-这是秒杀页面，展示秒杀商品详情，通过输入验证码后点击秒杀按钮进行秒杀。
+- 这是秒杀页面，展示秒杀商品详情，通过输入验证码后点击秒杀按钮进行秒杀。
+
 ![SeckillPage](./imgs/seckillGoodsDetail.png)
 ### 秒杀结果页面
+- 这是秒杀结果展示
+
 ![SeckillSuccess1](./imgs/success1.png)
 ### 秒杀详情页
-这是秒杀详情页，秒杀成功即可展示。然后进行支付
+- 这是秒杀详情页，秒杀成功即可展示。然后进行支付
+
 ![SeckillSuccess2](./imgs/success2.png)
 ### 微信支付的二维码
-这是微信支付的二维码
+- 这是微信支付的二维码
+
 ![qrCode](./imgs/qrcode.png)
 ### 微信支付结果
-这是微信支付的结果
+- 这是微信支付的结果
+
 ![qrCode](./imgs/payResult.jpg)
 ### 支付结果
-支付成功后订单状态改变
+- 支付成功后订单状态改变
+
 ![payfinish](./imgs/payfinish.png)
 
 
